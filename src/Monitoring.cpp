@@ -24,7 +24,7 @@
 
 Monitoring::Monitoring(Formula &f)
     : formula(f), mat(f), eventTrie(new Trie(0)), nInstances(0),
-      nTransitions(0) {
+      nTransitions(0), nViolations(0) {
     if (mat.representsFalse()) {
         throw std::runtime_error("formula evaluates to FALSE");
     }
@@ -165,9 +165,13 @@ Monitoring::monitorstep(std::list<MonitorAutomaton *> &mas) {
         MonitorAutomaton *ma = *mas_it;
         ma->step(mat.aut, mat.trace_vars, mat.ltlaps_set, nTransitions);
         if (ma->rejecting(mat.aut)) {
+	    ++nViolations;
             printCEX(ma);
             delete ma;
             mas_it = mas.erase(mas_it);
+	    if (FLAG_ALL_ERRORS) {
+		continue;
+	    }
             return false;
         }
         if (ma->accepting(mat.aut)) {
@@ -228,4 +232,5 @@ Monitoring::printStats() {
     std::cout << "trie size: " << eventTrie->root()->size() << std::endl;
     std::cout << "created instances: " << nInstances << std::endl;
     std::cout << "done transitions: " << nTransitions << std::endl;
+    std::cout << "found violations: " << nViolations << std::endl;
 }

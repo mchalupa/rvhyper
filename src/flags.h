@@ -22,5 +22,6 @@
 extern bool FLAG_VERBOSE;
 extern bool FLAG_QUIET;
 extern bool FLAG_STATS;
+extern bool FLAG_ALL_ERRORS;
 
 #endif /* SRC_FLAGS_H_ */

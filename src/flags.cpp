@@ -21,3 +21,4 @@
 bool FLAG_VERBOSE = false;
 bool FLAG_STATS = false;
 bool FLAG_QUIET = false;
+bool FLAG_ALL_ERRORS = false;

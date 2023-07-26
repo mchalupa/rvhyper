@@ -35,6 +35,7 @@ class Monitoring {
     Trie *eventTrie;
     unsigned nInstances;
     long nTransitions;
+    unsigned long nViolations;
 
     void instantiateAutomata(std::list<MonitorAutomaton *> &mas);
     void forkAutomata(std::list<MonitorAutomaton *> &mas,

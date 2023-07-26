@@ -147,6 +147,8 @@ main(int argc, char *const argv[]) {
             break;
             GETOPT_OPT("--quiet") : FLAG_QUIET = true;
             break;
+            GETOPT_OPT("--all-errors") : FLAG_ALL_ERRORS = true;
+            break;
 
             GETOPT_OPTARG("-s") : formula_param = std::string(optarg);
             fit = FormulaInputType::STRING;
