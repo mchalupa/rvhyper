@@ -23,7 +23,7 @@ DEP    := $(OBJ:%.o=%.d)
 CXXFLAGS += -Wall -W -Wuninitialized
 
 # Standard compile time flags for C++/CXX projects.
-CXXFLAGS += -std=c++11
+CXXFLAGS += -std=c++17
 CXXFLAGS += -I./include
 
 # SPOT lib
