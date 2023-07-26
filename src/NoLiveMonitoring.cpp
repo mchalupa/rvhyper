@@ -83,7 +83,9 @@ NoLiveMonitoring::buildTrieLVL(Trie *&trie, Trace *trace) {
         return false;
     }
     auto &e = trace->currentEvent();
-    std::cout << trace->name() << " Event: " << e << std::endl;
+    if (!FLAG_QUIET) {
+        std::cout << trace->name() << " Event: " << e << std::endl;
+    }
     e.restrictProperties(mat.aps);
     trie = trie->addValue(trace->getId(), e);
     return true;
