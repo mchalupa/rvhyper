@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -22,6 +23,8 @@
 #include "SelectionHelper.h"
 #include <vector>
 
+namespace rvhyper {
+
 class Remembering_Selection_Helper : public Selection_Helper {
   public:
     Remembering_Selection_Helper(unsigned size, bool r, bool s);
@@ -30,5 +33,7 @@ class Remembering_Selection_Helper : public Selection_Helper {
     bool hasNext();
     void initNextIteration(unsigned n_alternatives);
 };
+
+}
 
 #endif /* SRC_REMEMBERINGSELECTIONHELPER_H_ */

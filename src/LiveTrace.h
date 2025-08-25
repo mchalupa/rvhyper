@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -21,6 +22,8 @@
 
 #include "Trace.h"
 
+namespace rvhyper {
+
 class LiveTrace : public Trace {
   private:
     bool has_next;
@@ -36,5 +39,7 @@ class LiveTrace : public Trace {
 
     void nextEvent(Event &event);
 };
+
+}
 
 #endif /* SRC_LIVETRACE_H_ */

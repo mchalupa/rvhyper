@@ -21,6 +21,8 @@
 
 #include "timer.h"
 
+namespace rvhyper {
+
 timer::timer() {
     startedAt = 0;
     pausedAt = 0;
@@ -96,4 +98,6 @@ timer::GetTicks() {
         return pausedAt - startedAt;
 
     return clock() - startedAt;
+}
+
 }

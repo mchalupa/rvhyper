@@ -20,6 +20,8 @@
 #include <assert.h>
 #include <iostream>
 
+namespace rvhyper {
+
 template <typename T>
 TrieNode<T>::TrieNode(unsigned sessionID)
     : sessionID(sessionID), value(), parent(nullptr), children(), cTraces(0),
@@ -116,3 +118,5 @@ TrieNode<T>::printChildCount(unsigned lvl) {
 }
 
 template struct TrieNode<Event>;
+
+}

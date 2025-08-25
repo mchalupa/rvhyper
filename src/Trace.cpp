@@ -19,6 +19,8 @@
 #include "Trace.h"
 #include <sstream>
 
+namespace rvhyper {
+
 Trace::Trace(unsigned id) : id(id), idx(0), bDone(false) {}
 
 Trace::~Trace() {}
@@ -28,4 +30,6 @@ Trace::name() {
     std::stringstream ss;
     ss << "Trace " << id;
     return ss.str();
+}
+
 }

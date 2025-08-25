@@ -18,6 +18,8 @@
 
 #include "FileTrace.h"
 
+namespace rvhyper {
+
 std::istream &
 operator>>(std::istream &str, Row &data) {
     std::string line;
@@ -59,4 +61,6 @@ FileTrace::name() {
     std::stringstream ss;
     ss << Trace::name() << " (" << filename << ")";
     return ss.str();
+}
+
 }

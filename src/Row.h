@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -26,6 +27,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
+namespace rvhyper {
 
 // Inspired by:
 // http://stackoverflow.com/questions/1120140/how-can-i-read-and-parse-csv-files-in-c
@@ -58,5 +61,7 @@ class Row {
     }
     Event event;
 };
+
+}
 
 #endif /* SRC_ROW_H_ */

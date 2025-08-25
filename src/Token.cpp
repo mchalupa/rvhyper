@@ -21,6 +21,8 @@
 #include "LexerUtil.h"
 #include "diagnostic.h"
 
+namespace rvhyper {
+
 Token::Token() : pos(Pos("")), kind(TokenKind::ERROR) {}
 
 Token::Token(Pos pos, TokenKind kind) : pos(pos), kind(kind) {}
@@ -57,4 +59,6 @@ Token::toString() {
     default:
         return kind2name[int(kind)];
     }
+}
+
 }

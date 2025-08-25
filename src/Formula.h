@@ -21,10 +21,12 @@
 #define FORMULA_H_
 
 #include <set>
-#include <spot/tl/formula.hh>
-#include <spot/twa/twagraph.hh>
 #include <string>
 #include <vector>
+#include <spot/tl/formula.hh>
+#include <spot/twa/twagraph.hh>
+
+namespace rvhyper {
 
 class Formula {
   private:
@@ -53,5 +55,7 @@ class Formula {
     std::vector<std::string> tracevars();
     spot::const_twa_graph_ptr translate2monitor();
 };
+
+} // namespace rvhyper
 
 #endif /* FORMULA_H_ */

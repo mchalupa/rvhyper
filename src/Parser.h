@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -16,9 +17,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#ifndef RVHYPER_PARSER_H_
+#define RVHYPER_PARSER_H_
+
 #include "Formula.h"
 #include "Lexer.h"
 #include "Token.h"
+
+namespace rvhyper {
 
 class Parser {
   private:
@@ -39,3 +45,7 @@ class Parser {
 
     Formula parseFormula();
 };
+
+}
+
+#endif

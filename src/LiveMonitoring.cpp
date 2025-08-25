@@ -21,6 +21,8 @@
 #include "flags.h"
 #include <sstream>
 
+namespace rvhyper {
+
 LiveMonitoring::LiveMonitoring(Formula &f)
     : Monitoring(f), needToInstantiate(false), session_c(0) {}
 
@@ -85,4 +87,6 @@ LiveMonitoring::printAPs() {
         }
     }
     std::cout << std::endl;
+}
+
 }

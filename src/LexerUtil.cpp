@@ -18,6 +18,8 @@
 
 #include "LexerUtil.h"
 
+namespace rvhyper {
+
 #define K TokenKind
 std::unordered_map<std::string, TokenKind> LexerUtil::keyword2kind = {
     {"forall", K::FORALL}, {"exists", K::EXISTS},
@@ -25,3 +27,5 @@ std::unordered_map<std::string, TokenKind> LexerUtil::keyword2kind = {
 #undef K
 
 std::unordered_map<std::string, TokenKind>::const_iterator LexerUtil::k2k_it;
+
+}

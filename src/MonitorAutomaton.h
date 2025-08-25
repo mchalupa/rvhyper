@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -28,6 +29,8 @@
 #include <string>
 #include <vector>
 
+namespace rvhyper {
+
 class MonitorAutomaton {
   public:
     std::vector<Trie *> tries;
@@ -51,5 +54,7 @@ class MonitorAutomaton {
 
     unsigned getSteps();
 };
+
+}
 
 #endif /* MONITORAUTOMATON_H_ */

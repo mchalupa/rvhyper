@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -23,6 +24,8 @@
 #include <unordered_map>
 
 #include "TokenEnums.h"
+
+namespace rvhyper {
 
 static inline bool
 isDigit(char c) {
@@ -55,5 +58,7 @@ static inline TokenKind
 pickTokenKind() {
     return LexerUtil::k2k_it->second;
 }
+
+} // namespace rvhyper
 
 #endif /* LEXERUTIL_H_ */

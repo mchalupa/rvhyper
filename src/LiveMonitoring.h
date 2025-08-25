@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -29,6 +30,8 @@
 #include "RememberingSelectionHelper.h"
 #include "Trace.h"
 
+namespace rvhyper {
+
 class LiveMonitoring : public Monitoring {
   private:
     std::list<MonitorAutomaton *> mas;
@@ -46,5 +49,7 @@ class LiveMonitoring : public Monitoring {
     void printStats();
     void printAPs();
 };
+
+}
 
 #endif /* SRC_LIVEMONITORING_H_ */

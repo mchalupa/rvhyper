@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -19,6 +20,8 @@
 #ifndef POS_H
 #define POS_H
 
+namespace rvhyper {
+
 struct Pos {
     explicit Pos() : Pos("", 0, 0) {}
     explicit Pos(char const *const name) : Pos(name, 0, 0) {}
@@ -31,5 +34,7 @@ struct Pos {
     unsigned int line;
     unsigned int column;
 };
+
+}
 
 #endif

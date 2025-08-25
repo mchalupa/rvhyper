@@ -24,6 +24,9 @@
 
 #include "diagnostic.h"
 
+
+namespace rvhyper {
+
 void
 panic(char const *const file, int const line, char const *const msg) {
     fprintf(stderr, "%s:%d: %s\n", file, line, msg);
@@ -100,10 +103,12 @@ verrorf(Pos const *const pos, char const *fmt, va_list ap) {
         }
 
         default:
-            PANIC("invalid format specifier");
+            panic(__FILE__, __LINE__, "invalid format specifier");
         }
     }
     fputs(fmt, out);
     fputc('\n', out);
     exit(1);
+}
+
 }

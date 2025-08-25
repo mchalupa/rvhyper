@@ -122,6 +122,9 @@ print_commands() {
 
 int
 main(int argc, char *const argv[]) {
+
+    using namespace rvhyper;
+
     Mode mode = Mode::PARALLEL;
     FormulaInputType fit = FormulaInputType::NONE;
     std::string formula_param;

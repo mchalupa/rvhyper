@@ -21,6 +21,8 @@
 #include "MonitorAutomaton.h"
 #include "flags.h"
 
+namespace rvhyper {
+
 NoLiveMonitoring::NoLiveMonitoring(Formula &f) : Monitoring(f) {}
 
 NoLiveMonitoring::~NoLiveMonitoring() {}
@@ -114,4 +116,6 @@ NoLiveMonitoring::buildTrie(std::vector<Trace *> &traces) {
         }
         eventTrie = root;
     }
+}
+
 }

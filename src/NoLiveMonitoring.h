@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -21,8 +22,9 @@
 
 #include "Formula.h"
 #include "Monitoring.h"
-#include "SelectionHelper.h"
 #include <vector>
+
+namespace rvhyper {
 
 class NoLiveMonitoring : public Monitoring {
   private:
@@ -36,5 +38,7 @@ class NoLiveMonitoring : public Monitoring {
     bool monitor(std::vector<Trace *> &traces);
     bool monitor(Trace *trace);
 };
+
+}
 
 #endif /* SRC_NOLIVEMONITORING_H_ */

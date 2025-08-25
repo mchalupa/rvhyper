@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -18,6 +19,8 @@
 
 #ifndef TOKENENUMS_H_
 #define TOKENENUMS_H_
+
+namespace rvhyper {
 
 enum class TokenKind {
     // DO NOT CHANGE ORDER, or change in LexerUtil.cpp as well
@@ -96,5 +99,7 @@ static char const *type2name[] = {
 #undef K
 #undef T
 #undef P
+
+} // namespace rvhyper
 
 #endif /* TOKENENUMS_H_ */

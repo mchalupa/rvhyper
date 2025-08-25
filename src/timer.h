@@ -1,5 +1,6 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
 // Copyright (C) 2013  daniweb.com
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -24,6 +25,8 @@
 
 #include <ctime>
 
+namespace rvhyper {
+
 class timer {
     clock_t startedAt;
     clock_t pausedAt;
@@ -45,4 +48,7 @@ class timer {
 
     clock_t GetTicks();
 };
+
+}
+
 #endif

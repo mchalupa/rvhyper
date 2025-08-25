@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -20,8 +21,9 @@
 #define SRC_TRIE_H_
 
 #include "Event.h"
-#include <set>
 #include <vector>
+
+namespace rvhyper {
 
 template <typename T> struct TrieNode {
     //  private:
@@ -59,5 +61,7 @@ template <typename T> struct TrieNode {
 };
 
 typedef TrieNode<Event> Trie;
+
+} // namespace rvhyper
 
 #endif /* SRC_TRIE_H_ */

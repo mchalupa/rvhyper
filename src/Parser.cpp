@@ -23,6 +23,8 @@
 
 #include "diagnostic.h"
 
+namespace rvhyper {
+
 Parser::Parser(Lexer *lexer) : lexer(lexer) { nextToken(); }
 
 Parser::~Parser() {}
@@ -98,4 +100,6 @@ Parser::parseIdentifier() {
                kind2name[int(token.kind)]);
         return Token(token.pos, TokenKind::IDENTIFIER, "<error>");
     }
+}
+
 }

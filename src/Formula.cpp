@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -22,6 +23,8 @@
 #include <fstream>
 #include <spot/tl/parse.hh>
 #include <spot/twaalgos/translate.hh>
+
+namespace rvhyper {
 
 Formula::Formula(std::vector<std::string> &es, std::vector<std::string> &fs,
                  std::string &body)
@@ -207,3 +210,5 @@ Formula::translate2monitor() {
     spot::const_twa_graph_ptr aut = trans.run(body);
     return aut;
 }
+
+} // namespace rvhyper

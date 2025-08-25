@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -22,6 +23,8 @@
 #include "Token.h"
 #include <stdint.h>
 #include <string>
+
+namespace rvhyper {
 
 class Lexer {
   public:
@@ -52,5 +55,7 @@ class Lexer {
 
     Pos pos(int);
 };
+
+}
 
 #endif /* LEXER_H_ */

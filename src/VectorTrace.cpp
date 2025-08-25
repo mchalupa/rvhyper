@@ -18,6 +18,8 @@
 
 #include "VectorTrace.h"
 
+namespace rvhyper {
+
 VectorTrace::VectorTrace(unsigned id)
     : Trace(id), events(), current_position(0) {
     // TODO Auto-generated constructor stub
@@ -51,4 +53,6 @@ void
 VectorTrace::reset() {
     Trace::reset();
     current_position = 0;
+}
+
 }

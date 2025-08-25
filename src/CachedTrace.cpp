@@ -18,6 +18,8 @@
 
 #include "CachedTrace.h"
 
+namespace rvhyper {
+
 CachedTrace::CachedTrace(Trace *t) : VectorTrace(t->getId()), t(t) {}
 
 CachedTrace::~CachedTrace() { delete t; }
@@ -36,4 +38,6 @@ CachedTrace::next() {
 std::string
 CachedTrace::name() {
     return t->name();
+}
+
 }

@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -25,6 +26,8 @@
 #include "TokenEnums.h"
 #include "pos.h"
 
+namespace rvhyper {
+
 struct Token {
 
   public:
@@ -40,5 +43,7 @@ struct Token {
 
     std::string toString();
 };
+
+}
 
 #endif /* TOKEN_H_ */

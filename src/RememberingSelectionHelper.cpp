@@ -18,8 +18,9 @@
 
 #include "RememberingSelectionHelper.h"
 
-#include <iostream>
 #include <math.h>
+
+namespace rvhyper {
 
 Remembering_Selection_Helper::Remembering_Selection_Helper(unsigned size,
                                                            bool r, bool s)
@@ -45,4 +46,6 @@ Remembering_Selection_Helper::initNextIteration(unsigned n_alternatives) {
         selection[i] = 0;
     selection[selection.size() - 1] = n_alternatives - 1;
     initialized = (n_alternatives > 1) || !r;
+}
+
 }

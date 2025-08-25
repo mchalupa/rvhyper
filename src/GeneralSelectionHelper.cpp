@@ -16,9 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <stdexcept>
+
 #include "GeneralSelectionHelper.h"
 
-#include <iostream>
+
+namespace rvhyper {
 
 General_Selection_Helper::General_Selection_Helper(
     std::vector<unsigned> n_alternatives)
@@ -48,4 +51,6 @@ General_Selection_Helper::hasNext() {
     }
     selection[i]++;
     return true;
+}
+
 }

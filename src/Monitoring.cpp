@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -21,6 +22,8 @@
 #include "GeneralSelectionHelper.h"
 #include "MonitorAutomaton.h"
 #include "flags.h"
+
+namespace rvhyper {
 
 Monitoring::Monitoring(Formula &f)
     : formula(f), mat(f), eventTrie(new Trie(0)), nInstances(0),
@@ -233,4 +236,6 @@ Monitoring::printStats() {
     std::cout << "created instances: " << nInstances << std::endl;
     std::cout << "done transitions: " << nTransitions << std::endl;
     std::cout << "found violations: " << nViolations << std::endl;
+}
+
 }

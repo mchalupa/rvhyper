@@ -25,6 +25,8 @@
 
 #define TK TokenKind
 
+namespace rvhyper {
+
 Lexer::Lexer(const char *formula) {
     size_t size = strlen(formula);
     char *buffer = new char[size + 1];
@@ -183,3 +185,5 @@ Lexer::pos(int offset) {
 }
 
 #undef TK
+
+}

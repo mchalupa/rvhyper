@@ -19,6 +19,8 @@
 #include "LiveTrace.h"
 #include <stdexcept>
 
+namespace rvhyper {
+
 LiveTrace::LiveTrace(unsigned id) : Trace(id), has_next(false) {}
 
 LiveTrace::~LiveTrace() {}
@@ -46,4 +48,6 @@ void
 LiveTrace::nextEvent(Event &event) {
     this->event = event; // copies
     has_next = true;
+}
+
 }

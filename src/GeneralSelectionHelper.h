@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -22,6 +23,8 @@
 #include <stdlib.h>
 #include <vector>
 
+namespace rvhyper {
+
 class General_Selection_Helper {
   protected:
     std::vector<unsigned> selection;
@@ -42,5 +45,7 @@ class General_Selection_Helper {
         return selection.size();
     };
 };
+
+}
 
 #endif /* SRC_GENERALSELECTIONHELPER_H_ */

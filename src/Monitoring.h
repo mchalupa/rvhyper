@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -25,6 +26,8 @@
 #include "Trie.h"
 #include <vector>
 
+namespace rvhyper {
+
 class Monitoring {
   private:
     void printCEX(MonitorAutomaton *ma);
@@ -49,5 +52,7 @@ class Monitoring {
     void printAutomatonCharacteristics(std::ostream &out);
     void printStats();
 };
+
+}
 
 #endif /* SRC_MONITORING_H_ */

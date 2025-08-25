@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -24,6 +25,8 @@
 #include <iostream>
 #include <spot/twa/bddprint.hh>
 #include <spot/twa/fwd.hh>
+
+namespace rvhyper {
 
 MonitorAutomatonTemplate::MonitorAutomatonTemplate(Formula &f)
     : trace_vars(f.tracevars()), aut(f.translate2monitor()) {
@@ -132,4 +135,6 @@ MonitorAutomatonTemplate::instanciate(std::vector<Trie *> &tries) {
 bool
 MonitorAutomatonTemplate::representsFalse() {
     return !aut->state_is_accepting(aut->get_init_state_number());
+}
+
 }

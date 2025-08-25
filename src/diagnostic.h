@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -21,7 +22,7 @@
 
 #include "pos.h"
 
-#define PANIC(msg) panic(__FILE__, __LINE__, (msg))
+namespace rvhyper {
 
 void panic(char const *const file, int const line, char const *const msg);
 
@@ -34,5 +35,7 @@ void errorErrno(Pos const &pos);
 bool hasNewErrors();
 
 int printDiagnosticSummary();
+
+}
 
 #endif

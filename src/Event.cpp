@@ -18,7 +18,10 @@
 
 #include "Event.h"
 
+#include <iostream>
 #include <algorithm>
+
+namespace rvhyper {
 
 std::ostream &
 operator<<(std::ostream &os, const Event &e) {
@@ -55,4 +58,6 @@ Event::restrictProperties(std::vector<std::string> &aps) {
     std::set_intersection(output.begin(), output.end(), aps.begin(), aps.end(),
                           std::back_inserter(tmp));
     output = tmp;
+}
+
 }

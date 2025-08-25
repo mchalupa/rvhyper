@@ -21,6 +21,8 @@
 #include <iostream>
 #include <math.h>
 
+namespace rvhyper {
+
 Selection_Helper::Selection_Helper(unsigned n_alternatives, unsigned size,
                                    bool r, bool s)
     : n_alternatives(n_alternatives), initialized(!r), r(r), s(s) {
@@ -61,4 +63,6 @@ Selection_Helper::hasNext() {
         return selection[selection.size() - 1]++ != n_alternatives - 1;
     }
     return true;
+}
+
 }

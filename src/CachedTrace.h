@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -21,6 +22,8 @@
 
 #include "VectorTrace.h"
 
+namespace rvhyper {
+
 class CachedTrace : public VectorTrace {
   private:
     Trace *t;
@@ -32,5 +35,7 @@ class CachedTrace : public VectorTrace {
     bool next();
     std::string name();
 };
+
+}
 
 #endif /* SRC_CACHEDTRACE_H_ */
