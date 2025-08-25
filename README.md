@@ -10,12 +10,26 @@
 
 ### 1.2. Build
 
-The given Makefile provides the functionality to build RVHyper.
-If you have all dependencies (see below), a single make command should do the job.
-The binary *rvhyper* gets placed into build/release/.
+The following commands will create the `build` directory and build RVHyper.
 
 ```
-$ make
+meson setup build
+meson compile -C build
+```
+
+The `rvhyper` binary gets places into `build/src/`.
+If you build spot from source (see below) and install it into a cusom directory,
+you will need to tell `pkg-config` where is the `libspot.pc` configuration file.
+This can be done through the `PKG_CONFIG_PATH` env variable.
+
+#### Building with the legacy Makefile configuration
+
+The given `Makefile.old` provides the functionality to build RVHyper too.
+If you have all dependencies (see below), a single make command should do the job.
+The binary *rvhyper* gets placed into `build/release/`.
+
+```
+$ make -f Makefile.old
 $ ls -lgoh --time-style=+ build/release/rvhyper
 -rwxr-xr-x 1 170K  build/release/rvhyper
 ```
@@ -29,6 +43,21 @@ curl -LRO https://www.lrde.epita.fr/dload/spot/spot-2.8.7.tar.gz
 tar xf spot-2.8.7.tar.gz
 cd spot-2.8.7
 ./configure --enable-c++17 --disable-python --disable-debug  && make -j2 && make install
+```
+
+#### Full example
+
+```
+# build SPOT and install it into the `spot-install` directory
+curl -LRO https://www.lrde.epita.fr/dload/spot/spot-2.8.7.tar.gz
+tar xf spot-2.8.7.tar.gz
+cd spot-2.8.7
+./configure --enable-c++17 --disable-python --disable-debug --prefix=$(pwd)/spot-install
+make -j3 && make install
+
+export PKG_CONFIG_PATH=$(pwd)/spot-install/lib/pkgconfig
+meson setup build
+meson compile -C build
 ```
 
 ### 1.3. Demo
