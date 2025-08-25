@@ -11,12 +11,24 @@
 ### 1.2. Build
 
 The given Makefile provides the functionality to build RVHyper.
-A single make command should do the job. The binary *rvhyper* gets placed into build/release/.
+If you have all dependencies (see below), a single make command should do the job.
+The binary *rvhyper* gets placed into build/release/.
 
 ```
 $ make
 $ ls -lgoh --time-style=+ build/release/rvhyper
 -rwxr-xr-x 1 170K  build/release/rvhyper
+```
+
+#### Building SPOT
+
+If you don't have the right version of spot available via your package manager, you can build it with the following steps:
+
+```
+curl -LRO https://www.lrde.epita.fr/dload/spot/spot-2.8.7.tar.gz
+tar xf spot-2.8.7.tar.gz
+cd spot-2.8.7
+./configure --enable-c++17 --disable-python --disable-debug  && make -j2 && make install
 ```
 
 ### 1.3. Demo
@@ -47,13 +59,13 @@ This reads commands as well as IO-events directly from the standard input.
 #### 2.2.1. Commands
 
 - print commands:
- 	- *print help*: list the available commands
- 	- *print specification*: print the specification
- 	- *print aps*: list the atomic propositions of the specification formula
- 	- *print stats*: print statistics of the running RVHyper instance
+  - *print help*: list the available commands
+  - *print specification*: print the specification
+  - *print aps*: list the atomic propositions of the specification formula
+  - *print stats*: print statistics of the running RVHyper instance
 - session commands:
- 	- *session start*: start new monitoring session
- 	- *session end*: end active monitoring session
+  - *session start*: start new monitoring session
+  - *session end*: end active monitoring session
 - *exit* / *quit*: exit RVHyper
 
 #### 2.2.2. IO-Events
