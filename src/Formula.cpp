@@ -151,6 +151,18 @@ Formula::hasProperty(std::string property) {
     return p;
 }
 
+void Formula::setProperties(const std::string& prps) {
+    for (char p : prps) {
+        switch (p) {
+            case 'r': ref = true; break;
+            case 's': symm = true; break;
+            case 't': trans = true; break;
+        };
+    }
+
+    ref_done = symm_done = trans_done = true;
+}
+
 bool
 Formula::reflexive() {
     if (!ref_done) {

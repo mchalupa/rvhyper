@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -47,6 +48,7 @@ class Formula {
     bool reflexive();
     bool symmetric();
     bool transitive();
+    void setProperties(const std::string& prps);
     size_t tracevarsSize();
     std::vector<std::string> tracevars();
     spot::const_twa_graph_ptr translate2monitor();

@@ -1,4 +1,5 @@
 // Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland University)
+// Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)
 //
 // This file is part of RVHyper, a runtime verification tool for
 // temporal hyperproperties.
@@ -58,6 +59,11 @@ print_usage(const char *name) {
         "  --sequential-debug     sequential monitoring debug\n"
         "  --stdin                read from stdin (default: false)\n"
         "                         uses sequential monitoring\n"
+        "  --formula-prps        any combination of letters 'rst' saying that\n"
+        "                         the formula is (r)eflexive, (s)ymmetric and/or\n"
+        "                         (t)ransitive. Setting this overrides the decisions\n"
+        "                         made by EAHyper (if available).\n"
+        "  --all-errors           do not stop after finding the first error\n"
         "  --verbose              print more information and progress "
         "(default: false)\n"
         "  --stats                print statistics at the end of the execution "
@@ -72,6 +78,7 @@ print_licence_notice() {
     printf(
         "Copyright (C) 2018  Marvin Stenger (Reactive Systems Group @ Saarland "
         "University)\n"
+        "Copyright (C) 2025  Marek Chalupa (Institute of Science and Technology Austria)\n"
         "License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>.\n"
         "This is free software, and you are welcome to\n"
         "redistribute it under certain conditions.\n"
@@ -80,7 +87,7 @@ print_licence_notice() {
 
 static void
 print_version() {
-    printf("RVHyper v0.2.3  (Jan 17, 2020)\n\n");
+    printf("RVHyper v0.3.0-ista  (Aug, 2025)\n\n");
 
     print_licence_notice();
 
@@ -118,6 +125,8 @@ main(int argc, char *const argv[]) {
     Mode mode = Mode::PARALLEL;
     FormulaInputType fit = FormulaInputType::NONE;
     std::string formula_param;
+    std::string formula_prps;
+    bool force_formula_prps = false;
     std::vector<std::string> trace_files;
 
     // Handling of command line arguments
@@ -155,6 +164,9 @@ main(int argc, char *const argv[]) {
             break;
             GETOPT_OPTARG("-S") : formula_param = std::string(optarg);
             fit = FormulaInputType::FILE;
+            break;
+            GETOPT_OPTARG("--formula-prps") : formula_prps = std::string(optarg);
+            force_formula_prps = true;
             break;
 
         GETOPT_MISSING_ARG:
@@ -203,6 +215,10 @@ main(int argc, char *const argv[]) {
         std::cerr << "Specification not valid." << std::endl;
         return 2;
     }
+    if (force_formula_prps) {
+        formula.setProperties(formula_prps);
+    }
+
     if (!FLAG_QUIET || FLAG_VERBOSE) {
         std::cout << "Specification:" << std::endl;
         formula.print(std::cout);
