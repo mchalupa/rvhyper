@@ -30,7 +30,8 @@ rvhyper_lib = static_library(
   'rvhyper',
   sources: sources,
   install: true,
-  dependencies: [spot_dep]
+  dependencies: [spot_dep],
+  include_directories: incdir
 )
 
 exe = executable(
@@ -38,6 +39,7 @@ exe = executable(
   'main.cpp',
   link_with: [rvhyper_lib],
   dependencies: [spot_dep],
+  include_directories: incdir,
   install : true,
 )
 

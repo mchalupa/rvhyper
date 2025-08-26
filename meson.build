@@ -9,5 +9,8 @@ project(
 
 spot_dep = dependency('libspot', version: '2.8.7')
 
+incdir = include_directories('include/rvhyper')
+
 subdir('src')
+subdir('include')
 
