@@ -41,6 +41,7 @@ class Formula {
     bool hasProperty(std::string property);
 
   public:
+    Formula() = default;
     Formula(std::vector<std::string> &es, std::vector<std::string> &fs,
             std::string &body);
 
